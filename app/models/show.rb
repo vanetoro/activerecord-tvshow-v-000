@@ -19,6 +19,6 @@ class Show < ActiveRecord::Base
   end
 
   def self.popular_shows
-    Show.pluck("name",'rating > 5')
+    Show.pluck("*",'rating > 5')
   end
 end
