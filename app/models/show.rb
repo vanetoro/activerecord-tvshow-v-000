@@ -15,10 +15,10 @@ class Show < ActiveRecord::Base
   end
 
   def self.ratings_sum
-    Show.sum(:rating)
+    Show.sum(,::rating)
   end
 
   def self.popular_shows
-    Show.pluck('rating > 5')
+    Show.pluck(:name,'rating > 5')
   end
 end
