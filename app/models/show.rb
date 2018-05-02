@@ -17,4 +17,8 @@ class Show < ActiveRecord::Base
   def self.ratings_sum
     Show.sum(:rating)
   end
+
+  def popular_shows
+    Show.pluck('rating > 5')
+  end
 end
