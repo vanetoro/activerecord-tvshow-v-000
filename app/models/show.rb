@@ -4,8 +4,9 @@ class Show < ActiveRecord::Base
     Show.maximum('rating')
   end
   def self.most_popular_show
-    # binding.pry
     Show.where('rating = ?', highest_rating)[0]
-
+  end
+  def self.lowest_rating
+    Show.minimum('rating')
   end
 end
